@@ -30,11 +30,13 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 default_start_msg = """
-**Hi, I'm Media Search bot**
+**Hi, I'm Ichigo**🥰
+You Can Download Any Anime Using Me 😊
+🖤Here you can search files in inline mode. Just press following buttons and start searching🖤.
 
-Here you can search files in inline mode. Just press following buttons and start searching.
+Made By : @tr0j3n
 """
 
 START_MSG = environ.get('START_MSG', default_start_msg)
 SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
-INVITE_MSG = environ.get('INVITE_MSG', 'Please join @.... to use this bot')
+INVITE_MSG = environ.get('INVITE_MSG', '🤍Please join @animeandwaifuforall Group to use this bot❤')
