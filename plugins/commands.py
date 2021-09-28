@@ -15,8 +15,8 @@ async def start(bot, message):
         await message.reply(INVITE_MSG)
     else:
         buttons = [[
-            InlineKeyboardButton('Search Here', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('Go Inline', switch_inline_query=''),
+            InlineKeyboardButton('🖤 Search Here 🖤 ', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('💠 Go Inline 💠  ', switch_inline_query=''),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(START_MSG, reply_markup=reply_markup)
@@ -32,7 +32,7 @@ async def channel_info(bot, message):
     else:
         raise ValueError("Unexpected type of CHANNELS")
 
-    text = '📑 **Indexed channels/groups**\n'
+    text = '💌 **Indexed channels/groups**\n'
     for channel in channels:
         chat = await bot.get_chat(channel)
         if chat.username:
@@ -55,10 +55,10 @@ async def channel_info(bot, message):
 @Client.on_message(filters.command('total') & filters.user(ADMINS))
 async def total(bot, message):
     """Show total files in database"""
-    msg = await message.reply("Processing...⏳", quote=True)
+    msg = await message.reply("Processing...💕", quote=True)
     try:
         total = await Media.count_documents()
-        await msg.edit(f'📁 Saved files: {total}')
+        await msg.edit(f'🤍 Saved files: {total}')
     except Exception as e:
         logger.exception('Failed to check total files')
         await msg.edit(f'Error: {e}')
@@ -78,7 +78,7 @@ async def delete(bot, message):
     """Delete file from database"""
     reply = message.reply_to_message
     if reply and reply.media:
-        msg = await message.reply("Processing...⏳", quote=True)
+        msg = await message.reply("Processing...💚", quote=True)
     else:
         await message.reply('Reply to file with /delete which you want to delete', quote=True)
         return
